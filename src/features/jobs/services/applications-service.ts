@@ -89,3 +89,4 @@ export async function fetchUserApplications(userId: string): Promise<Application
     resumeUrl: row.resume_url ?? null,
   }));
 }
+

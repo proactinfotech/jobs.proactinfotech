@@ -10,5 +10,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "FAQ", href: "/#faq" },
 ];
 
-export const COMPANY_WEBSITE_URL = "https://example.com";
+export const COMPANY_WEBSITE_URL = "https://proactinfotech.com";
 export const COMPANY_NAME = "Proact Infotech";
+

@@ -58,3 +58,4 @@ export function FloatingParticles({ count = 30 }: { count?: number }) {
     </div>
   );
 }
+

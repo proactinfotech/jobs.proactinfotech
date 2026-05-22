@@ -27,7 +27,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
 
         <div className="relative flex items-start justify-between gap-4">
           <div>
-            <h3 className="font-heading text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+            <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
               {job.title}
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">{job.department}</p>
@@ -91,3 +91,4 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
     </motion.div>
   );
 }
+

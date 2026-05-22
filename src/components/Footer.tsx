@@ -13,8 +13,9 @@ export function Footer() {
           {/* Left: tagline */}
           <div className="lg:col-span-2">
             <ScrollReveal variant="scale">
-              <h3 className="max-w-sm font-heading text-2xl font-semibold leading-snug text-foreground md:text-3xl">
-                We are building the future of technology.
+              <h3 className="max-w-sm font-display text-[clamp(1.4rem,3vw,2.5rem)] font-medium leading-[1.2] text-foreground">
+                We are building the future of technology.{" "}
+                <span className="text-primary">Join us.</span>
               </h3>
               <Link
                 to="/jobs"
@@ -88,9 +89,16 @@ export function Footer() {
       <div className="overflow-hidden border-t border-border">
         <div className="container mx-auto px-6 py-8">
           <ScrollReveal variant="slide" direction="left">
-            <h2 className="font-display text-6xl font-light tracking-tight text-foreground sm:text-8xl md:text-9xl lg:text-[11rem] leading-none">
-              {COMPANY_NAME}
-            </h2>
+            <div className="flex items-center gap-4 md:gap-6">
+              <img
+                src="/images/logo.png"
+                alt={COMPANY_NAME}
+                className="h-[clamp(2rem,7vw,8rem)] w-auto shrink-0 object-contain"
+              />
+              <h2 className="font-display text-[clamp(2.2rem,9vw,10rem)] font-bold leading-[0.9] tracking-tight" style={{ color: "#2E4B3C" }}>
+                {COMPANY_NAME}
+              </h2>
+            </div>
           </ScrollReveal>
         </div>
       </div>
@@ -115,3 +123,4 @@ export function Footer() {
     </footer>
   );
 }
+

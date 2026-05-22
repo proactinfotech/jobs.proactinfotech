@@ -29,3 +29,4 @@ export function useUserApplications(userId: string | undefined) {
     staleTime: 2 * 60 * 1000,
   });
 }
+

@@ -28,3 +28,4 @@ export function AnimatedCard({ children, index = 0, className }: AnimatedCardPro
     </motion.div>
   );
 }
+

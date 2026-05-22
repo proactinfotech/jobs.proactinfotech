@@ -66,3 +66,4 @@ export const FAQ_DATA: FAQItem[] = [
     category: "internship",
   },
 ];
+

@@ -20,7 +20,7 @@ function FAQAccordionItem({ item }: { item: FAQItem }) {
         onClick={() => setOpen(!open)}
         className="flex w-full items-center justify-between py-5 text-left"
       >
-        <span className="pr-4 font-heading text-base font-medium text-foreground">
+        <span className="pr-4 font-display text-base font-medium text-foreground">
           {item.question}
         </span>
         <ChevronDown
@@ -66,7 +66,7 @@ export function FAQSection() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
             FAQs
           </p>
-          <h2 className="mt-3 font-heading text-3xl font-bold text-foreground md:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-bold text-foreground md:text-4xl">
             Frequently Asked Questions
           </h2>
         </motion.div>
@@ -109,3 +109,4 @@ export function FAQSection() {
     </section>
   );
 }
+

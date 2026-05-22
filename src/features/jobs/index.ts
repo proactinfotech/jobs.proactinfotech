@@ -7,3 +7,4 @@ export { filterJobs, INITIAL_FILTERS } from "./utils/filter";
 export { useJobs, useJob } from "./hooks/useJobs";
 export { fetchActiveJobs, fetchJobById } from "./services/jobs-service";
 export type { Job, FilterState } from "./types";
+

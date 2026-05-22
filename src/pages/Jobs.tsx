@@ -38,7 +38,7 @@ export default function Jobs() {
             transition={{ duration: 0.5 }}
             className="mb-10"
           >
-            <h1 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
+            <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
               All Positions
             </h1>
             <p className="mt-3 text-lg text-muted-foreground">
@@ -72,3 +72,4 @@ export default function Jobs() {
     </MainLayout>
   );
 }
+

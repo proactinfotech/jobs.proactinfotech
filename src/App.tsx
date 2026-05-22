@@ -10,6 +10,8 @@ import { AuthProvider } from "@/features/auth/context/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { PageTransitionProvider } from "@/components/PageTransition";
+import { BackgroundParticles } from "@/components/BackgroundParticles";
 
 const Index = lazy(() => import("./pages/Index"));
 const Jobs = lazy(() => import("./pages/Jobs"));
@@ -27,17 +29,20 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/jobs" element={<Jobs />} />
-              <Route path="/signin" element={<SignIn />} />
-              <Route path="/apply/:jobId" element={<Apply />} />
-              <Route path="/applications" element={<ProtectedRoute><MyApplications /></ProtectedRoute>} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <PageTransitionProvider>
+            <BackgroundParticles />
+            <ScrollToTop />
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/jobs" element={<Jobs />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/apply/:jobId" element={<Apply />} />
+                <Route path="/applications" element={<ProtectedRoute><MyApplications /></ProtectedRoute>} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </PageTransitionProvider>
         </BrowserRouter>
         <Analytics />
         <SpeedInsights />
@@ -47,3 +52,4 @@ const App = () => (
 );
 
 export default App;
+

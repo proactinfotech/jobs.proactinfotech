@@ -27,7 +27,7 @@ export default function Apply() {
       <MainLayout>
         <div className="flex min-h-[60vh] items-center justify-center pt-28">
           <div className="text-center">
-            <h1 className="font-heading text-2xl font-bold text-foreground">Job Not Found</h1>
+            <h1 className="font-display text-2xl font-bold text-foreground">Job Not Found</h1>
             <Link to="/jobs" className="mt-4 inline-block text-sm text-primary hover:text-primary/80">
               ← Back to Jobs
             </Link>
@@ -57,7 +57,7 @@ export default function Apply() {
             </Link>
 
             <div className="mb-8">
-              <h1 className="font-display text-3xl font-light text-foreground md:text-4xl">
+              <h1 className="font-display text-3xl font-bold leading-tight text-foreground md:text-4xl">
                 {job.title}
               </h1>
               <p className="mt-2 text-muted-foreground">
@@ -83,12 +83,12 @@ export default function Apply() {
 
             <div className="mb-8 space-y-6 rounded-2xl border border-border bg-card/80 p-6 backdrop-blur-sm md:p-8">
               <div>
-                <h2 className="font-heading text-lg font-semibold text-foreground">About the Role</h2>
+                <h2 className="font-display text-lg font-semibold text-foreground">About the Role</h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{job.description}</p>
               </div>
               {job.requirements && (
                 <div>
-                  <h2 className="font-heading text-lg font-semibold text-foreground">Requirements</h2>
+                  <h2 className="font-display text-lg font-semibold text-foreground">Requirements</h2>
                   <ul className="mt-2 list-disc list-inside space-y-1 text-sm text-muted-foreground">
                     {job.requirements.map((req) => (
                       <li key={req}>{req}</li>
@@ -98,7 +98,7 @@ export default function Apply() {
               )}
               {job.responsibilities && (
                 <div>
-                  <h2 className="font-heading text-lg font-semibold text-foreground">Responsibilities</h2>
+                  <h2 className="font-display text-lg font-semibold text-foreground">Responsibilities</h2>
                   <ul className="mt-2 list-disc list-inside space-y-1 text-sm text-muted-foreground">
                     {job.responsibilities.map((r) => (
                       <li key={r}>{r}</li>
@@ -127,7 +127,7 @@ export default function Apply() {
             className="flex items-center justify-between rounded-2xl border border-border bg-card/80 p-6 backdrop-blur-sm"
           >
             <div>
-              <p className="font-heading text-base font-semibold text-foreground">
+              <p className="font-display text-base font-semibold text-foreground">
                 Interested in this role?
               </p>
               <p className="mt-0.5 text-sm text-muted-foreground">
@@ -156,3 +156,4 @@ export default function Apply() {
     </MainLayout>
   );
 }
+

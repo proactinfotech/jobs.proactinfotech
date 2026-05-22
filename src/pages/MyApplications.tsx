@@ -74,7 +74,7 @@ function ApplicationDetail({ app, onClose }: { app: ApplicationRecord; onClose: 
                 </button>
               </div>
 
-              <h2 className="font-heading text-2xl font-semibold leading-snug text-foreground">{app.jobTitle}</h2>
+              <h2 className="font-display text-2xl font-semibold leading-snug text-foreground">{app.jobTitle}</h2>
               <p className="mt-1 text-sm text-muted-foreground">{app.department}</p>
 
               <div className="mt-6 space-y-3">
@@ -124,7 +124,7 @@ function ApplicationDetail({ app, onClose }: { app: ApplicationRecord; onClose: 
           {/* ── Right panel: form answers (hidden scrollbar) ── */}
           <div className="scrollbar-hide flex-1 overflow-y-scroll">
             <div className="px-8 py-6">
-              <h3 className="font-heading text-lg font-semibold text-foreground">Application Answers</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground">Application Answers</h3>
               <p className="mt-1 text-xs text-muted-foreground">Responses submitted with the application</p>
             </div>
             <div className="divide-y divide-border px-8 pb-8">
@@ -146,7 +146,7 @@ function EmptyState() {
   return (
     <div className="flex flex-col items-center justify-center py-20 text-center">
       <FileText className="h-12 w-12 text-muted-foreground/40" />
-      <h3 className="mt-4 font-heading text-xl font-semibold text-foreground">
+      <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
         No Applications Yet
       </h3>
       <p className="mt-2 max-w-sm text-sm text-muted-foreground">
@@ -165,7 +165,7 @@ function ApplicationCard({ app, onClick }: { app: ApplicationRecord; onClick: ()
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-heading text-lg font-semibold text-foreground">
+          <h3 className="font-display text-lg font-semibold text-foreground">
             {app.jobTitle}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">{app.department}</p>
@@ -213,7 +213,7 @@ export default function MyApplications() {
               transition={{ duration: 0.5 }}
               className="mb-10"
             >
-              <h1 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
+              <h1 className="font-display text-4xl font-bold text-foreground md:text-5xl">
                 My Applications
               </h1>
               <p className="mt-3 text-lg text-muted-foreground">
@@ -246,4 +246,5 @@ export default function MyApplications() {
     </MainLayout>
   );
 }
+
 

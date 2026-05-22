@@ -12,7 +12,7 @@ export function JobRowList({ jobs }: JobRowListProps) {
   if (jobs.length === 0) {
     return (
       <div className="py-16 text-center">
-        <p className="font-heading text-xl font-semibold text-foreground">No positions found</p>
+        <p className="font-display text-xl font-semibold text-foreground">No positions found</p>
         <p className="mt-2 text-sm text-muted-foreground">Try adjusting your filters.</p>
       </div>
     );
@@ -33,7 +33,7 @@ export function JobRowList({ jobs }: JobRowListProps) {
             className="group flex items-center justify-between gap-4 py-6 transition-colors hover:bg-muted/30 px-2 -mx-2 rounded-lg"
           >
             <div className="min-w-0 flex-1">
-              <h3 className="font-heading text-lg font-medium text-foreground transition-colors group-hover:text-primary md:text-xl">
+              <h3 className="font-display text-lg font-medium text-foreground transition-colors group-hover:text-primary md:text-xl">
                 {job.title}
               </h3>
               <p className="mt-0.5 text-sm text-muted-foreground md:hidden">
@@ -52,3 +52,4 @@ export function JobRowList({ jobs }: JobRowListProps) {
     </div>
   );
 }
+

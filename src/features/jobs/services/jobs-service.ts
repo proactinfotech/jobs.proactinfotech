@@ -55,3 +55,4 @@ export async function fetchJobById(id: string): Promise<Job | null> {
   if (error) throw error;
   return data ? mapRowToJob(data) : null;
 }
+

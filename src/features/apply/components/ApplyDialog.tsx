@@ -25,7 +25,7 @@ function AuthGate({ jobTitle }: { jobTitle: string }) {
       <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
         <Lock className="h-7 w-7 text-primary" />
       </div>
-      <h2 className="mt-6 font-heading text-xl font-bold text-foreground">
+      <h2 className="mt-6 font-display text-xl font-bold text-foreground">
         Sign In to Apply
       </h2>
       <p className="mt-2 max-w-xs text-sm text-muted-foreground">
@@ -52,7 +52,7 @@ export function ApplyDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[90vh] max-w-3xl gap-0 overflow-hidden p-0">
         <DialogHeader className="border-b border-border px-6 py-5">
-          <DialogTitle className="font-heading text-lg font-semibold text-foreground">
+          <DialogTitle className="font-display text-lg font-semibold text-foreground">
             {user ? `Apply for ${jobTitle}` : `Apply for ${jobTitle}`}
           </DialogTitle>
         </DialogHeader>
@@ -74,3 +74,4 @@ export function ApplyDialog({
     </Dialog>
   );
 }
+

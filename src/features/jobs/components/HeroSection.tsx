@@ -36,15 +36,16 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="max-w-5xl font-display text-6xl font-light leading-[0.95] tracking-tight text-foreground drop-shadow-sm sm:text-8xl md:text-9xl lg:text-[10rem]"
+          className="max-w-5xl font-display text-[clamp(3rem,8vw,10rem)] font-bold leading-[0.95] tracking-tight text-foreground"
         >
-          Build the future
+          Build the<br />
+          future
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mt-2 max-w-5xl font-display text-5xl font-light italic leading-[0.95] tracking-tight text-primary drop-shadow-sm sm:text-7xl md:text-8xl lg:text-[8rem]"
+          className="mt-2 max-w-5xl font-display text-[clamp(2.5rem,6.5vw,8rem)] font-bold italic leading-[0.95] tracking-tight text-primary"
         >
           with us
         </motion.h2>
@@ -93,3 +94,4 @@ export function HeroSection() {
     </section>
   );
 }
+

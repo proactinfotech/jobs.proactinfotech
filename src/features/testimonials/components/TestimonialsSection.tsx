@@ -68,7 +68,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         &ldquo;{testimonial.quote}&rdquo;
       </p>
       <div className="mt-5 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 font-heading text-sm font-semibold text-primary">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 font-display text-sm font-semibold text-primary">
           {testimonial.name.charAt(0)}
         </div>
         <div>
@@ -91,7 +91,7 @@ export function TestimonialsSection() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
               Our People
             </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold text-foreground md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-bold text-foreground md:text-4xl">
               What Our Team Says
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
@@ -119,3 +119,4 @@ export function TestimonialsSection() {
     </section>
   );
 }
+

@@ -28,3 +28,4 @@ export const INITIAL_FILTERS: FilterState = {
   type: "",
   experience: "",
 };
+

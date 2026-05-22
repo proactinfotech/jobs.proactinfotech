@@ -24,3 +24,4 @@ export function formatPostedDate(dateString: string): string {
   if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
   return `${Math.floor(diffDays / 30)} months ago`;
 }
+

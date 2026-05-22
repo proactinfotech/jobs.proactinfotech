@@ -66,7 +66,7 @@ export function ContactSection() {
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <Send className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="mt-4 font-heading text-2xl font-bold text-foreground">
+            <h3 className="mt-4 font-display text-2xl font-bold text-foreground">
               Message Sent!
             </h3>
             <p className="mt-2 text-muted-foreground">
@@ -85,7 +85,7 @@ export function ContactSection() {
           {/* Left column — info */}
           <div className="lg:col-span-2">
             <ScrollReveal variant="slide" direction="left">
-              <h2 className="font-display text-4xl font-light leading-tight md:text-5xl">
+              <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl">
                 Message us
               </h2>
               <p className="mt-4 text-sm leading-relaxed opacity-70">
@@ -173,3 +173,4 @@ export function ContactSection() {
     </section>
   );
 }
+

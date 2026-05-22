@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ExternalLink, Menu, X, LogOut, LayoutList } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,13 +7,14 @@ import { useScrolled } from "@/hooks/use-scroll";
 import { NAV_ITEMS, COMPANY_WEBSITE_URL } from "@/constants/navigation";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/features/auth/context/AuthContext";
+import { usePageTransition } from "@/components/PageTransition";
 
 export function Header() {
   const scrolled = useScrolled(40);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const { user, signOut } = useAuth();
+  const { navigateTo } = usePageTransition();
 
   useEffect(() => {
     setMobileOpen(false);
@@ -21,19 +22,26 @@ export function Header() {
 
   const handleSignOut = async () => {
     await signOut();
-    navigate("/");
+    navigateTo("/");
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#") && !href.startsWith("http")) {
+      e.preventDefault();
+      navigateTo(href);
+    }
   };
 
   // Auth button for desktop (non-scrolled)
   const DesktopAuthButtonFlat = user ? (
     <div className="flex items-center gap-1.5">
-      <Link
-        to="/applications"
+      <button
+        onClick={() => navigateTo("/applications")}
         className="flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-bold uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-foreground"
       >
         <LayoutList className="h-3.5 w-3.5" />
         My Applications
-      </Link>
+      </button>
       <button
         onClick={handleSignOut}
         className="flex items-center gap-1.5 rounded-full bg-foreground px-4 py-1.5 text-sm font-bold uppercase tracking-[0.1em] text-background transition-all hover:opacity-90"
@@ -43,24 +51,24 @@ export function Header() {
       </button>
     </div>
   ) : (
-    <Link
-      to="/signin"
+    <button
+      onClick={() => navigateTo("/signin")}
       className="rounded-full bg-foreground px-5 py-2 text-sm font-bold uppercase tracking-[0.1em] text-background transition-all hover:opacity-90"
     >
       Sign In
-    </Link>
+    </button>
   );
 
   // Auth button for desktop (scrolled)
   const DesktopAuthButtonScrolled = user ? (
     <>
-      <Link
-        to="/applications"
+      <button
+        onClick={() => navigateTo("/applications")}
         className="flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-bold uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-foreground"
       >
         <LayoutList className="h-3.5 w-3.5" />
         My Applications
-      </Link>
+      </button>
       <button
         onClick={handleSignOut}
         className="flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-bold uppercase tracking-[0.1em] text-muted-foreground transition-all hover:text-foreground"
@@ -70,12 +78,12 @@ export function Header() {
       </button>
     </>
   ) : (
-    <Link
-      to="/signin"
+    <button
+      onClick={() => navigateTo("/signin")}
       className="rounded-full bg-foreground px-5 py-1.5 text-sm font-bold uppercase tracking-[0.1em] text-background transition-all hover:opacity-90"
     >
       Sign In
-    </Link>
+    </button>
   );
 
   return (
@@ -90,7 +98,7 @@ export function Header() {
         {/* When not scrolled: unified bar */}
         {!scrolled && (
           <div className="flex items-center justify-between py-2 px-2">
-            <Link to="/" className="flex-shrink-0 px-2">
+            <Link to="/" onClick={(e) => handleNavClick(e, "/")} className="flex-shrink-0 px-2">
               <Logo />
             </Link>
 
@@ -100,6 +108,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     to={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="nav-link-wavy relative px-1 py-2 text-sm font-bold uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.label}
@@ -136,6 +145,7 @@ export function Header() {
           <>
             <Link
               to="/"
+              onClick={(e) => handleNavClick(e, "/")}
               className="flex-shrink-0 rounded-full glass px-4 py-2.5 transition-all duration-300"
             >
               <Logo />
@@ -147,6 +157,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     to={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="nav-link-wavy relative rounded-full px-4 py-1.5 text-sm font-bold uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.label}
@@ -191,13 +202,13 @@ export function Header() {
           >
             <nav className="mt-2 flex flex-col gap-1 rounded-2xl glass p-4">
               {NAV_ITEMS.map((item) => (
-                <Link
+                <button
                   key={item.href}
-                  to={item.href}
-                  className="rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                  onClick={() => { if (!item.href.startsWith("#")) navigateTo(item.href); else { setMobileOpen(false); } }}
+                  className="rounded-lg px-4 py-3 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                 >
                   {item.label}
-                </Link>
+                </button>
               ))}
               <a
                 href={COMPANY_WEBSITE_URL}
@@ -210,13 +221,13 @@ export function Header() {
               </a>
               {user ? (
                 <>
-                  <Link
-                    to="/applications"
+                  <button
+                    onClick={() => navigateTo("/applications")}
                     className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                   >
                     <LayoutList className="h-4 w-4" />
                     My Applications
-                  </Link>
+                  </button>
                   <button
                     onClick={handleSignOut}
                     className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-4 py-3 text-sm font-medium text-background"
@@ -226,12 +237,12 @@ export function Header() {
                   </button>
                 </>
               ) : (
-                <Link
-                  to="/signin"
+                <button
+                  onClick={() => navigateTo("/signin")}
                   className="mt-2 rounded-xl bg-foreground px-4 py-3 text-center text-sm font-medium text-background"
                 >
                   Sign In
-                </Link>
+                </button>
               )}
             </nav>
           </motion.div>
@@ -240,3 +251,4 @@ export function Header() {
     </header>
   );
 }
+

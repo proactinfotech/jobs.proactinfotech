@@ -10,7 +10,7 @@ export function JobListSection({ jobs, title }: JobListSectionProps) {
   if (jobs.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
-        <p className="font-heading text-xl font-semibold text-foreground">
+        <p className="font-display text-xl font-semibold text-foreground">
           No positions found
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -24,7 +24,7 @@ export function JobListSection({ jobs, title }: JobListSectionProps) {
     <section>
       {title && (
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="font-heading text-2xl font-bold text-foreground">
+          <h2 className="font-display text-2xl font-bold text-foreground">
             {title}
           </h2>
           <span className="text-sm text-muted-foreground">
@@ -40,3 +40,4 @@ export function JobListSection({ jobs, title }: JobListSectionProps) {
     </section>
   );
 }
+

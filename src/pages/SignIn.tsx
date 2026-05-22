@@ -81,7 +81,7 @@ export default function SignIn() {
         >
           <div className="rounded-2xl border border-border bg-card/80 p-8 shadow-xl backdrop-blur-sm">
             <div className="mb-8 text-center">
-              <h1 className="font-display text-3xl font-light text-foreground">
+              <h1 className="font-display text-3xl font-bold text-foreground">
                 {isSignUp ? "Create Account" : "Welcome Back"}
               </h1>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -167,3 +167,4 @@ export default function SignIn() {
     </MainLayout>
   );
 }
+

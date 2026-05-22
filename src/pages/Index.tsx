@@ -34,9 +34,9 @@ export default function Index() {
               </div>
             </ScrollReveal>
             <ScrollReveal variant="blur" delay={0.1}>
-              <h2 className="font-heading text-3xl font-semibold leading-snug text-foreground md:text-4xl lg:text-5xl">
+              <h2 className="font-display text-3xl font-bold leading-[1.1] text-foreground md:text-4xl lg:text-5xl">
                 We're redefining what's possible in technology.{" "}
-                <span className="text-muted-foreground">Join us.</span>
+                <span className="text-primary">Join us.</span>
               </h2>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
                 We're always looking for extraordinary minds to join our team. If you're
@@ -89,3 +89,4 @@ export default function Index() {
     </MainLayout>
   );
 }
+

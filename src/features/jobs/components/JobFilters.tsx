@@ -92,3 +92,4 @@ export function JobFilters({ filters, onChange }: JobFiltersProps) {
     </div>
   );
 }
+

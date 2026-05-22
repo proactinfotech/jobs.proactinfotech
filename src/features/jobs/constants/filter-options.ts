@@ -30,3 +30,4 @@ export const EXPERIENCE_OPTIONS: FilterOption[] = [
   { label: "All Experience", value: "" },
   { label: "0-1 years", value: "0-1 years" },
 ];
+
