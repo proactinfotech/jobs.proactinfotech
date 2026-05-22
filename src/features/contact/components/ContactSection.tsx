@@ -97,7 +97,7 @@ export function ContactSection() {
                   <p className="text-[10px] font-medium uppercase tracking-[0.2em] opacity-50">
                     General Contact
                   </p>
-                  <p className="mt-1 text-sm">careers@company.com</p>
+                  <p className="mt-1 text-sm">careers@proactinfotech.com</p>
                 </div>
                 <div>
                   <p className="text-[10px] font-medium uppercase tracking-[0.2em] opacity-50">

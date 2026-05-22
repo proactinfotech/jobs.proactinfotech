@@ -55,8 +55,13 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href="mailto:careers@company.com" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Email
+                <a href="mailto:careers@proactinfotech.com" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  careers@proactinfotech.com
+                </a>
+              </li>
+              <li>
+                <a href="mailto:support@proactinfotech.com" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  support@proactinfotech.com
                 </a>
               </li>
               <li>
